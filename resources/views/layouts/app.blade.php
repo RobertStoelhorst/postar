@@ -31,7 +31,11 @@
                     <a href="" class="p-3">Robert</a>
                 </li> 
                 <li>
-                    <a href="{{ route('logout') }}" class="p-3">Log Out</a>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="p-3">Log Out</button>
+
+                    </form>
                 </li>
                 @endauth
                 @guest
