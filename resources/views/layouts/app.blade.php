@@ -26,18 +26,23 @@
             </ul>
          
             <ul class="flex items-center">
+                @auth
                 <li>
                     <a href="" class="p-3">Robert D Stoelhorst</a>
+                </li> 
+                <li>
+                    <a href="" class="p-3">Log Out</a>
                 </li>
+                @endauth
+                @guest
                 <li>
                     <a href="" class="p-3">Login</a>
                 </li>
                 <li>
                     <a href="{{route('register')}}" class="p-3">Register</a>
                 </li>
-                <li>
-                    <a href="" class="p-3">Log Out</a>
-                </li>
+                @endguest
+               
             </ul>
 
         </nav>
