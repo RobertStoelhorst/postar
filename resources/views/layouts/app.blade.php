@@ -28,10 +28,10 @@
             <ul class="flex items-center">
                 @auth
                 <li>
-                    <a href="" class="p-3">Robert D Stoelhorst</a>
+                    <a href="" class="p-3">Robert</a>
                 </li> 
                 <li>
-                    <a href="" class="p-3">Log Out</a>
+                    <a href="{{ route('logout') }}" class="p-3">Log Out</a>
                 </li>
                 @endauth
                 @guest

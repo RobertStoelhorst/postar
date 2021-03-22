@@ -5,7 +5,9 @@
    <div class="w-5/12 bg-white p-6 rounded-lg">
 
     @if (session()->has('status'))
+    <div class="bg-red-500 p-1 rounded-md mb-6 text-white text-center">
         {{ session('status') }}
+    </div>
     @endif
 
        <form action="{{ route('login') }}" method="post">
