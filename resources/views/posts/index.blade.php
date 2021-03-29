@@ -33,8 +33,7 @@
                         <p class="mb-2">{{ $post->body }}</p>
                     </div>
                 @endforeach
-
-                {{ $posts->links() }} {{-- this is how we set-up and all we have to do for the pagination links controller below the posts --}}
+                {{ $posts->links() }} {{-- this is how we set-up and all we have to do for the pagination links controller below the posts, also set the paginate() and amount in the PostController --}}
             @else
                 <p>There are no posts at the moment</p>
             @endif

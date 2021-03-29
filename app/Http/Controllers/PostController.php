@@ -10,7 +10,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::paginate(2); // all posts returned with Post::get(), it is a laravel collection
-
+        // paginate() will set the amount of posts to fetch and display per page
         // dd($posts);
 
         return view('posts.index', [
