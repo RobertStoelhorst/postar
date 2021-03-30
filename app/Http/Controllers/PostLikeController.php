@@ -27,4 +27,13 @@ class PostLikeController extends Controller
 
         return back();
     }
+
+    public function destroy(Post $post, Request $request)
+    {
+        // dd($post);
+        // also need to set up authentication on the delete ability for only that user
+        $request->user()->likes()->where('post_id', $post->id)->delete();
+
+        return back();
+    }
 }

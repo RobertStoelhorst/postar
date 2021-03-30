@@ -39,8 +39,9 @@
                                     <button type="submit" class="text-blue-500">Like</button>
                                 </form>
                             @else
-                                <form action="" method="post" class="mr-1">
+                                <form action="{{ route('posts.likes', $post->id) }}" method="post" class="mr-1">
                                     @csrf
+                                    @method('DELETE') {{-- This is called method spoofing as there is no delete method in the form --}}
                                     <button type="submit" class="text-blue-500">Unlike</button>
                                 </form>
                             @endif
