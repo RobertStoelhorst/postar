@@ -31,11 +31,25 @@
                         class="text-gray-400 text-sm"> {{ $post->created_at->diffForHumans() }}</span>
 
                         <p class="mb-2">{{ $post->body }}</p>
+
+                        <div class="flex items-centre">
+                            <form action="{{ route('posts.likes', $post->id) }}" method="post" class="mr-1">
+                                @csrf
+                                <button type="submit" class="text-blue-500">Like</button>
+                            </form>
+                            <form action="" method="post" class="mr-1">
+                                @csrf
+                                <button type="submit" class="text-blue-500">Unlike</button>
+                            </form>
+
+                            <span>{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count()) }}</span>
+                        </div>
                     </div>
                 @endforeach
+                
                 {{ $posts->links() }} {{-- this is how we set-up and all we have to do for the pagination links controller below the posts, also set the paginate() and amount in the PostController --}}
             @else
-                <p>There are no posts at the moment</p>
+                <p>There are no posts here</p>
             @endif
         </div>
     </div>

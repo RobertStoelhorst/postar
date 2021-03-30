@@ -50,7 +50,7 @@
             </ul>
 
         </nav>
-        <img class="mb-5" src="https://smartwatermagazine.com/sites/default/files/styles/thumbnail-830x455/public/smart-network.jpg?itok=UbwwT8xU" style="width:100%;max-height:700px" alt="">
+        <img class="mb-5" src="https://smartwatermagazine.com/sites/default/files/styles/thumbnail-830x455/public/smart-network.jpg?itok=UbwwT8xU" style="width:100%;max-height:550px" alt="">
 
     @yield('content')
 
