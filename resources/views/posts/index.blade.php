@@ -33,19 +33,20 @@
                         <p class="mb-2">{{ $post->body }}</p>
 
                         <div class="flex items-centre">
-                            @if (!$post->likedBy(auth()->user()))
-                                <form action="{{ route('posts.likes', $post->id) }}" method="post" class="mr-1">
-                                    @csrf
-                                    <button type="submit" class="text-blue-500">Like</button>
-                                </form>
-                            @else
-                                <form action="{{ route('posts.likes', $post->id) }}" method="post" class="mr-1">
-                                    @csrf
-                                    @method('DELETE') {{-- This is called method spoofing as there is no delete method in the form --}}
-                                    <button type="submit" class="text-blue-500">Unlike</button>
-                                </form>
-                            @endif
-
+                            @auth {{-- this and close-out tag simply brings this form in once a user is authenticated --}}
+                                @if (!$post->likedBy(auth()->user()))
+                                    <form action="{{ route('posts.likes', $post->id) }}" method="post" class="mr-1">
+                                        @csrf
+                                        <button type="submit" class="text-blue-500">Like</button>
+                                    </form>
+                                @else
+                                    <form action="{{ route('posts.likes', $post->id) }}" method="post" class="mr-1">
+                                        @csrf
+                                        @method('DELETE') {{-- This is called method spoofing as there is no delete method in the form --}}
+                                        <button type="submit" class="text-blue-500">Unlike</button>
+                                    </form>
+                                @endif
+                            @endauth
                             <span>{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count()) }}</span>
                         </div>
                     </div>
