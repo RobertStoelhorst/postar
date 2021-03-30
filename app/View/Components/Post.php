@@ -31,6 +31,6 @@ class Post extends Component
  instead we defined the props in 
  ( /Users/robertstoelhorst/projects/PHP/posty-web-app/resources/views/components/post.blade.php ) 
  and handed them to the,
- ( /Users/robertstoelhorst/projects/PHP/posty-web-app/resources/views/posts/index.blade.php )
+ ( /Users/robertstoelhorst/projects/PHP/posty-web-app/resources/views/users/posts/index.blade.php )
  bringing it in with 
  <x-post :post="$post" /> -->
