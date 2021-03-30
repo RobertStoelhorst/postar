@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class PostLikeController extends Controller
 {
-    //
+
+    public function __construct()
+    {
+        $this->middleware(['auth']);  // This will ensure that any unauthenticated users will not be able to like posts
+    }
+
     public function store(Post $post, Request $request)
     {
         if ($post->likedBy($request->user())) {
