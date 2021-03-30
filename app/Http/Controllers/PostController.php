@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::with(['user', 'likes'])->paginate(20); // all posts returned with Post::get(), it is a laravel collection
+        $posts = Post::latest()->with(['user', 'likes'])->paginate(20); // all posts returned with Post::get(), it is a laravel collection
         // paginate() will set the amount of posts to fetch and display per page
         // also Post::with(...) is eager loading so we are limiting our queries to the database.
         // dd($posts);
@@ -35,6 +35,9 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
+        if (!$post->ownedBy(auth()->user())) {
+            dd('no');
+        }
         // dd($post);
         $post->delete();
     }
