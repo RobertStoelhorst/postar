@@ -3,6 +3,11 @@
 @section('content')
     <div class="flex justify-center">
         <div class="w-8/12 bg-white p-6 rounded-lg">
+
+            @guest
+            <h2 class="text-red-400 mb-4">Please Register and create your own user account to create a post</h2>
+            @endguest
+
             @auth
                 <form action="{{ route('posts') }}" method="post" class="mb-4">
                     @csrf
