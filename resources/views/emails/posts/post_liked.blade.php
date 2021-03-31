@@ -1,10 +1,13 @@
 @component('mail::message')
-# Introduction
+{{-- # Introduction --}}
+# Your post was liked
 
-The body of your message.
+{{-- The body of your message. --}}
 
-@component('mail::button', ['url' => ''])
-Button Text
+{{ $liker->name }} liked one of your posts
+
+@component('mail::button', ['url' => route('posts.show', $post)])
+    View post
 @endcomponent
 
 Thanks,<br>

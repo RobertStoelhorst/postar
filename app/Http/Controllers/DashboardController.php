@@ -17,9 +17,6 @@ class DashboardController extends Controller
     public function index()
     {
         // dd(Post::find(6)->created_at);
-        $user = auth()->user();
-
-        Mail::to($user)->send(new PostLiked());
 
         return view('dashboard');
     }

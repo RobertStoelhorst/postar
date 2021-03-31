@@ -32,7 +32,7 @@
                 <li>
                     <form action="{{ route('logout') }}" method="post" class="p-3 inline">
                         @csrf
-                        <button type="submit">Log Out</button>
+                        <button type="submit">LogOut</button>
 
                     </form>
                 </li>
@@ -51,7 +51,6 @@
 
         </nav>
         {{-- <img class="mb-5" src="https://smartwatermagazine.com/sites/default/files/styles/thumbnail-830x455/public/smart-network.jpg?itok=UbwwT8xU" style="width:100%;max-height:550px" alt=""> --}}
-
     @yield('content')
 
 </body>
