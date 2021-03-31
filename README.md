@@ -4,6 +4,8 @@
 -   php artisan serve (to start the server @ http://127.0.0.1:8000/)
 -   php artisan help
 
+## Full tutorial for this project [@](https://www.youtube.com/watch?v=MFh0Fd7BsjE&t=387s)
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
