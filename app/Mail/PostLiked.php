@@ -2,10 +2,12 @@
 
 namespace App\Mail;
 
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class PostLiked extends Mailable
 {
@@ -22,7 +24,6 @@ class PostLiked extends Mailable
      */
     public function __construct(User $liker, Post $post)
     {
-        //
         $this->liker = $liker;
         $this->post = $post;
     }
